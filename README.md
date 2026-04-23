@@ -17,6 +17,10 @@ CSS3
 JavaScript
 No external framework is required.
 🌱 “Turning plastic waste into opportunity and creativity.”
-for any changes and ideas feel free to contact , lets make more creative!
+for any changes and ideas feel free to contact , 
+
+lets make more creative!
+
 mail: buddulapoorvireddy@gmail.com
+
 linkdin:www.linkedin.com/in/poorvireddy1
