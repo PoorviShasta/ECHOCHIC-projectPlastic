@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EchoChic | Sign Up</title>
+  <meta
+    name="description"
+    content="Create your EchoChic account as a user, NGO, company, or admin invite and help build local plastic-clean communities."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <header class="auth-topbar">
+      <a class="brand" href="index.html">EchoChic</a>
+      <nav class="top-links" aria-label="Authentication pages">
+        <a href="login.html">Login</a>
+        <a class="active" href="signup.html">Sign Up</a>
+      </nav>
+    </header>
+
+    <main class="auth-shell">
+      <section class="auth-card">
+        <p class="eyebrow">Sign Up</p>
+        <h2>Start your mission account</h2>
+        <p class="auth-subtitle">Create your account in a clean, simple flow.</p>
+        <form class="auth-form" data-signup-form novalidate>
+          <div class="signup-progress" aria-label="Signup steps">
+            <span class="signup-progress-item is-active" data-step-indicator="1">Step 1: Account</span>
+            <span class="signup-progress-item" data-step-indicator="2">Step 2: Details</span>
+          </div>
+
+          <div class="signup-step" data-signup-step="1">
+            <fieldset class="role-fieldset">
+              <legend>Select your role</legend>
+              <div class="role-picker">
+                <label class="role-card">
+                  <input type="radio" name="accountRole" value="user" checked />
+                  <span class="role-name">User</span>
+                  <span class="role-text">Volunteer, buyer, or local participant</span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="accountRole" value="company" />
+                  <span class="role-name">Company</span>
+                  <span class="role-text">Sell upcycled products and hire locally</span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="accountRole" value="ngo" />
+                  <span class="role-name">NGO</span>
+                  <span class="role-text">Organize programs and area cleanup drives</span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="accountRole" value="admin" />
+                  <span class="role-name">Admin</span>
+                  <span class="role-text">Platform operations and approvals</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="grid-2">
+              <label>
+                Full name / contact person
+                <input type="text" name="fullName" autocomplete="name" placeholder="Your name" required />
+              </label>
+              <label>
+                Organization (optional for users)
+                <input type="text" name="organization" placeholder="Echo Local Hub" />
+              </label>
+            </div>
+
+            <div class="grid-2">
+              <label>
+                Email address
+                <input type="email" name="email" autocomplete="email" placeholder="you@email.com" required />
+              </label>
+              <label>
+                Phone number
+                <input type="tel" name="phone" autocomplete="tel" placeholder="+1 555 111 2222" required />
+              </label>
+            </div>
+
+            <div class="grid-2">
+              <label>
+                Password
+                <span class="field-with-action">
+                  <input
+                    type="password"
+                    id="signupPassword"
+                    name="password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    placeholder="Minimum 8 characters"
+                    required
+                  />
+                  <button type="button" class="field-action" data-toggle-password="signupPassword">Show</button>
+                </span>
+              </label>
+              <label>
+                Confirm password
+                <span class="field-with-action">
+                  <input
+                    type="password"
+                    id="signupConfirmPassword"
+                    name="confirmPassword"
+                    autocomplete="new-password"
+                    minlength="8"
+                    placeholder="Re-enter password"
+                    required
+                  />
+                  <button type="button" class="field-action" data-toggle-password="signupConfirmPassword">Show</button>
+                </span>
+              </label>
+            </div>
+
+            <div class="step-actions">
+              <button class="btn primary" type="button" id="signup-next-btn">Continue</button>
+            </div>
+          </div>
+
+          <div class="signup-step" data-signup-step="2" hidden>
+            <fieldset class="auth-section">
+              <legend>Local community details</legend>
+              <div class="grid-2">
+                <label>
+                  City / local area
+                  <input type="text" name="area" placeholder="Brooklyn, New York" required />
+                </label>
+                <label>
+                  State
+                  <input type="text" name="state" placeholder="New York" required />
+                </label>
+              </div>
+              <div class="grid-2">
+                <label>
+                  Community chapter name
+                  <input type="text" name="chapterName" placeholder="Green Lane Cleanup Circle" required />
+                </label>
+                <label>
+                  Preferred cleanup day
+                  <select name="cleanupDay" required>
+                    <option value="">Select a day</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                    <option>Weekday evening</option>
+                    <option>Flexible</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="auth-section role-section" data-role-only="user">
+              <legend>User interests</legend>
+              <label>
+                What would you like to do?
+                <select name="userInterest">
+                  <option>Join cleanup events</option>
+                  <option>Buy sustainable products</option>
+                  <option>Volunteer for product making</option>
+                  <option>All of the above</option>
+                </select>
+              </label>
+            </fieldset>
+
+            <fieldset class="auth-section role-section" data-role-only="company ngo" hidden>
+              <legend>Seller and production profile</legend>
+              <label>
+                Product categories made from plastic
+                <textarea
+                  name="productCategories"
+                  rows="3"
+                  placeholder="Example: trays, wall panels, storage bins"
+                  data-required-when-visible
+                ></textarea>
+              </label>
+              <div class="grid-2">
+                <label>
+                  Monthly production capacity
+                  <input
+                    type="text"
+                    name="capacity"
+                    placeholder="Example: 500 units / month"
+                    data-required-when-visible
+                  />
+                </label>
+                <label>
+                  Selling preference
+                  <select name="sellingPreference" data-required-when-visible>
+                    <option value="">Select one</option>
+                    <option>Local market only</option>
+                    <option>Online + local market</option>
+                    <option>Export ready</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="auth-section role-section" data-role-only="ngo" hidden>
+              <legend>NGO information</legend>
+              <div class="grid-2">
+                <label>
+                  NGO registration number
+                  <input type="text" name="ngoRegNo" placeholder="Enter NGO registration ID" data-required-when-visible />
+                </label>
+                <label>
+                  Focus area
+                  <select name="ngoFocus" data-required-when-visible>
+                    <option value="">Select focus</option>
+                    <option>Youth empowerment</option>
+                    <option>Environment and cleanup</option>
+                    <option>Skill development</option>
+                    <option>Multi-focus</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="auth-section role-section" data-role-only="admin" hidden>
+              <legend>Admin verification</legend>
+              <div class="grid-2">
+                <label>
+                  Admin invitation code
+                  <input type="text" name="adminInviteCode" placeholder="Secure invite code" data-required-when-visible />
+                </label>
+                <label>
+                  Admin area
+                  <select name="adminArea" data-required-when-visible>
+                    <option value="">Select area</option>
+                    <option>Community operations</option>
+                    <option>Seller approvals</option>
+                    <option>Platform safety</option>
+                    <option>Full access</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="checkbox">
+              <input type="checkbox" name="terms" required />
+              I agree to platform terms and community clean-work guidelines.
+            </label>
+
+            <div class="step-actions">
+              <button class="btn ghost" type="button" id="signup-back-btn">Back</button>
+              <button class="btn primary" type="submit">Create account</button>
+            </div>
+
+            <p class="form-note">Already registered? <a href="login.html">Login here</a></p>
+          </div>
+
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="auth.js" defer></script>
+</body>
+</html>

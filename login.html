@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EchoChic | Login</title>
+  <meta
+    name="description"
+    content="Login to EchoChic as an admin, user, company partner, or NGO member to manage products, cleanups, and local community initiatives."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <header class="auth-topbar">
+      <a class="brand" href="index.html">EchoChic</a>
+      <nav class="top-links" aria-label="Authentication pages">
+        <a class="active" href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
+    </header>
+
+    <main class="auth-shell">
+      <section class="auth-card">
+        <p class="eyebrow">Sign In</p>
+        <h2>Access your dashboard</h2>
+        <p class="auth-subtitle">Simple, secure login for users, companies, NGOs, and admins.</p>
+        <form class="auth-form" data-login-form novalidate>
+          <label>
+            Email address
+            <input type="email" name="email" autocomplete="email" placeholder="you@email.com" required />
+          </label>
+
+          <label>
+            Account role
+            <select name="loginRole" required>
+              <option value="user">User / Volunteer</option>
+              <option value="company">Company Seller</option>
+              <option value="ngo">NGO Partner</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+
+          <div class="role-section" data-role-only="admin" hidden>
+            <label>
+              Admin access key
+              <input
+                type="text"
+                name="adminKey"
+                placeholder="Enter your secure admin key"
+                data-required-when-visible
+              />
+            </label>
+          </div>
+
+          <label>
+            Password
+            <span class="field-with-action">
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+                minlength="8"
+                required
+              />
+              <button type="button" class="field-action" data-toggle-password="loginPassword">Show</button>
+            </span>
+          </label>
+
+          <div class="inline-row">
+            <label class="checkbox">
+              <input type="checkbox" name="rememberMe" />
+              Keep me signed in
+            </label>
+            <a class="inline-link" href="#" aria-label="Password reset link placeholder">Forgot password?</a>
+          </div>
+
+          <button class="btn primary" type="submit">Login</button>
+          <p class="form-note">New to EchoChic? <a href="signup.html">Create your account</a></p>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="auth.js" defer></script>
+</body>
+</html>
