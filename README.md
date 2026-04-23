@@ -6,7 +6,7 @@ EchoChic is a social-impact-driven web platform that focuses on collecting waste
 
 This project combines environmental sustainability, youth empowerment, and e-commerce into one integrated system.
 
-🌍 Live Project Link: https://echochicthetrashmakeover.netlify.app/
+🌍 Live Project Link: https://echochic-projectplastic.onrender.com/
 📁 Project Files
 index.html – Main website page 
 styles.css – Website styling and layout 
