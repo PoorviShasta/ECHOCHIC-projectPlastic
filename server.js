@@ -14,12 +14,37 @@ const io = new Server(server, {
   }
 });
 
+// ✅ FIX 1: Health check — prevents Render cold start (Googlebot 503 fix)
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
+// ✅ FIX 2: Sitemap served by Express — MUST be before express.static
+// Delete your static sitemap.xml file after adding this
 app.get('/sitemap.xml', (req, res) => {
-  res.header('Content-Type', 'application/xml');
-  res.send(`<?xml version="1.0" encoding="UTF-8"?>
+  res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+  res.setHeader('Cache-Control', 'public, max-age=3600');
+  res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://echochic-projectplastic.onrender.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://echochic-projectplastic.onrender.com/blog/plastic-bottle-crafts.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://echochic-projectplastic.onrender.com/blog/eco-fashion-from-waste.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://echochic-projectplastic.onrender.com/blog/upcycled-home-decor-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>`);
 });
@@ -35,10 +60,7 @@ app.get('/', (req, res) => {
 app.post('/api/qr-code', async (req, res) => {
   try {
     const { url, fileName } = req.body || {};
-
-    if (!url) {
-      return res.status(400).json({ message: 'URL is required.' });
-    }
+    if (!url) return res.status(400).json({ message: 'URL is required.' });
 
     let validatedUrl;
     try {
@@ -65,20 +87,14 @@ app.post('/api/qr-code', async (req, res) => {
     res.setHeader('Content-Disposition', `attachment; filename="${finalFileName}"`);
     return res.send(pngBuffer);
   } catch (error) {
-    return res.status(500).json({
-      message: 'Failed to generate QR code.',
-      error: error.message
-    });
+    return res.status(500).json({ message: 'Failed to generate QR code.', error: error.message });
   }
 });
 
-// Socket.io for cleanup-room
 const cleanupRoom = 'cleanup-room';
 
 io.on('connection', (socket) => {
   console.log(`User ${socket.id} connected`);
-
-  // Join cleanup-room on connect
   socket.join(cleanupRoom);
   socket.to(cleanupRoom).emit('user joined', { id: socket.id, message: 'A volunteer joined the cleanup chat.' });
 
