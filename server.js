@@ -114,6 +114,20 @@ io.on('connection', (socket) => {
   });
 });
 
+
+// ✅ SELF-PING — keeps Render free tier awake every 10 minutes
+// This prevents cold start when Googlebot visits
+const SITE_URL = 'https://echochic-projectplastic.onrender.com/health';
+
+setInterval(() => {
+  const https = require('https');
+  https.get(SITE_URL, (res) => {
+    console.log(`Keep-alive ping: ${res.statusCode}`);
+  }).on('error', (err) => {
+    console.log(`Keep-alive error: ${err.message}`);
+  });
+}, 10 * 60 * 1000); // every 10 minutes
+
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`EchoChic chat server running on http://localhost:${PORT}`);
