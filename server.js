@@ -14,6 +14,16 @@ const io = new Server(server, {
   }
 });
 
+app.get('/sitemap.xml', (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://echochic-projectplastic.onrender.com/</loc>
+  </url>
+</urlset>`);
+});
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
