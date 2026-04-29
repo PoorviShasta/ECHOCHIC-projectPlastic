@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://echochic-projectplastic.onrender.com/sitemap.xml
