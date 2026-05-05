@@ -1,23 +1,34 @@
-# UI/CSS Update & New Pages TODO
-Approved plan: Unified professional design across all pages + new pages (about, contact, volunteer, products).
+# Netlify Static Deploy TODO
+Status: ✅ Step 1 COMPLETE
 
-## Steps (sequential, confirm each):
-1. ✅ **Created**: TODO.md with plan breakdown.
-2. Enhance styles.css: Add blog/page classes, hero patterns, consistency (header/footer templates).
-3. Update index.html: Nav links to new pages, blog teasers polish.
-4. Update blog/*.html (3 files): Convert to full-page layouts using styles.css.
-5. Update auth pages (login.html, signup.html): Consistent header.
-6. Create new pages: about.html, contact.html, volunteer.html, products.html.
-7. Update JS if needed (app.js/chat.js for new nav).
-8. Test: Local server, responsive/accessibility checks.
-9. Update sitemap.xml, robots.txt.
-10. ✅ **Complete**: attempt_completion with demo command.
+## Progress
+- ✅ `auth.js`: Pure client-side mock auth (localStorage). Fully static ✅
+- ✅ `signup.html`: Complete multi-step form using auth.js ✅
+- ✅ Blog pages (3x): All use `../styles.css`, relative nav links ✅ No issues
 
-Progress: 6/10
+## Remaining Steps
 
-✅ Step 2 complete: styles.css enhanced with page/blog classes, heroes, filters.
-✅ Step 3 complete: index.html nav updated (links to new pages), blog teasers polished (reveal + text-link).
-✅ Step 4 complete: All 3 blog/*.html updated to full page layouts (page-header/nav/hero/article/cta/page-footer, using new CSS classes, consistent links/CTAs).
-✅ Step 5 complete: Auth pages updated with consistent headers.
-✅ Step 6 complete: Created 4 new pages – about.html (team/mission), contact.html (forms/map), volunteer.html (events/signup), products.html (full shop/filters/cart) with professional layouts matching design system.
+### 2. **[PENDING] Fix index.html** 
+   - Update gallery img src (`terrazzo trays.jpeg` → `%20` consistent)
+   - Disable live socket for chat (static fallback)
 
+### 3. **[PENDING] Complete products.html**
+   - Add full 6 product cards w/ `data-category`
+   - Ensure filter JS ready
+
+### 4. **[PENDING] Update chat.js**
+   - Static mock messages (no backend)
+
+### 5. **[PENDING] Fix login.html**
+   - Clean malformed meta/script tags
+
+### 6. **[PENDING] Netlify config**
+   - `netlify.toml` + `_redirects`
+
+### 7. **[PENDING] Update DEPLOYMENT.md**
+
+### 8. **TEST** `npx serve .`
+
+### 9. **DEPLOY** Netlify
+
+**Next**: Fix index.html images/chat
