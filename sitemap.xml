@@ -5,6 +5,33 @@
     <loc>https://echotrash.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://echotrash.netlify.app/about.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/contact.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/volunteer.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/products.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/login.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/signup.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/blog/plastic-bottle-crafts.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/blog/eco-fashion-from-waste.html</loc>
+  </url>
+  <url>
+    <loc>https://echotrash.netlify.app/blog/upcycled-home-decor-guide.html</loc>
+  </url>
 
   <url>
     <loc>https://echotrash.netlify.app/blog/plastic-bottle-crafts.html</loc>

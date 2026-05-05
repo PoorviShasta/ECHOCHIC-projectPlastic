@@ -43,29 +43,36 @@
 
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <a class="logo" href="/index.html">EchoTrash</a>
-    <div class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/index.html#products">Products</a>
-      <a href="/index.html#volunteer">Volunteer</a>
-      <a href="/index.html#contact">Contact</a>
+<header class="page-header">
+  <nav class="page-nav" aria-label="Main navigation">
+    <a class="page-logo" href="../index.html" aria-label="EchoChic Home">EchoChic</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="page-nav-links">Menu</button>
+    <div class="page-nav-links" id="page-nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../products.html">Products</a>
+      <a href="../volunteer.html">Volunteer</a>
+      <a href="../blog/">Blog</a>
+      <a href="../contact.html">Contact</a>
     </div>
+    <a class="page-nav-cta" href="../signup.html">Join Now</a>
   </nav>
 </header>
 
-<main style="max-width:760px;margin:0 auto;padding:2rem 1.5rem;">
+<main class="page-main">
+  <article class="blog-article">
+    <nav class="blog-hero">
+      <a href="../index.html#blog" class="text-link">← Back to Blog</a>
+      <div class="blog-meta">
+        <span>By EchoChic Team</span>
+        <span>DIY Recycling</span>
+        <span>5 min read</span>
+      </div>
+      <h1>10 Plastic Bottle Craft Ideas for Students in India</h1>
+    </nav>
 
-  <a href="/index.html" style="font-size:14px;color:#1D9E75;text-decoration:none;">← Back to EchoTrash</a>
-
-  <h1 style="margin-top:1.5rem;font-size:2rem;">
-    10 Plastic Bottle Craft Ideas for Students in India
-  </h1>
-
-  <p style="color:#888;font-size:14px;margin-bottom:2rem;">
-    By EchoTrash Team · DIY Recycling Guide · 5 min read
-  </p>
+    <div class="article-content">
+      <p>
 
   <!-- SEO BOOST INTRO -->
   <p>
@@ -120,20 +127,15 @@
     and training youth in recycling skills.
   </p>
 
-  <div style="margin-top:2rem;padding:1.5rem;background:#E1F5EE;border-radius:12px;">
-    <p style="margin:0 0 1rem;font-weight:500;">
-      Want to turn your ideas into real products?
-    </p>
-
-    <a href="/index.html#products" style="color:#0F6E56;font-weight:500;margin-right:1.5rem;">
-      Explore Products →
-    </a>
-
-    <a href="/index.html#contact" style="color:#0F6E56;font-weight:500;">
-      Join as Volunteer →
-    </a>
-  </div>
-
+      <div class="cta-banner">
+        <h3>Ready to create with recycled materials?</h3>
+        <div>
+          <a href="../products.html" class="btn primary">Shop Eco Products</a>
+          <a href="../volunteer.html" class="btn ghost" style="color: #fff; border-color: rgba(255,255,255,0.3);">Volunteer Now</a>
+        </div>
+      </div>
+    </div>
+  </article>
 </main>
 
 <footer class="site-footer">

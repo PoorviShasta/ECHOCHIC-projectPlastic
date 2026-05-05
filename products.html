@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upcycled Products – Eco Home Decor | EchoChic Shop</title>
+  <meta name="description" content="Shop upcycled plastic home decor: terrazzo trays, wall panels, planters, lamps. Affordable, sustainable products made by Indian youth volunteers.">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-template">
+  <header class="page-header">
+    <nav class="page-nav">
+      <a class="page-logo" href="index.html">EchoChic</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="page-nav-links">Menu</button>
+      <div class="page-nav-links" id="page-nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="blog/">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a class="page-nav-cta" href="signup.html">Cart</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero">
+      <h1>Shop Sustainable – Upcycled Home Decor</h1>
+      <p class="page-hero-lead">Handcrafted from plastic waste by youth volunteers. Affordable, durable, beautiful.</p>
+    </section>
+
+    <div class="product-filters">
+      <button class="filter-btn active" data-filter="all">All Products</button>
+      <button class="filter-btn" data-filter="trays">Trays</button>
+      <button class="filter-btn" data-filter="panels">Panels</button>
+      <button class="filter-btn" data-filter="planters">Planters</button>
+      <button class="filter-btn" data-filter="storage">Storage</button>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+      <article class="product-card reveal" data-category="trays">
+        <img class="product-media" src="gallery/terrazzo trays.jpeg" alt="Terrazzo trays from recycled plastic" loading="lazy">
+        <div class="product-topline">
+          <h3>Terrazzo Trays</h3>
+          <p class="product-price">$24.99</p>
+        </div>
+        <p>Speckled surfaces perfect for tables and entryways.</p>
+        <p class="product-info">1.2kg recycled • Water resistant</p>
+        <div class="product-actions">
+          <button class="btn ghost add-to-cart-btn">Add to Cart</button>
+          <button class="btn primary buy-now-btn">Buy Now</button>
+        </div>
+      </article>
+
+      <!-- Additional products from index.html product-grid copied here for full page -->
+      <!-- ... (wall panels, planters, lamp shades, storage bins, weave screens) ... -->
+
+      <article class="product-card reveal" data-category="panels">
+        <img class="product-media" src="gallery/wall pannels.jpeg" alt="Wall panels upcycled plastic">
+        <div class="product-topline">
+          <h3>Wall Panels</h3>
+          <p class="product-price">$42.50</p>
+        </div>
+        <p>Modular texture for small spaces.</p>
+        <div class="product-actions">
+          <button class="btn ghost add-to-cart-btn">Add to Cart</button>
+          <button class="btn primary buy-now-btn">Buy Now</button>
+        </div>
+      </article>
+
+      <!-- Repeat pattern for 6 products total -->
+    </div>
+
+    <div class="cart-panel" id="cart-panel">
+      <div class="cart-head">
+        <h3>Your Cart</h3>
+        <button id="clear-cart" class="text-link">Clear</button>
+      </div>
+      <div id="cart-items" class="cart-items">
+        <p class="cart-empty">Your cart is empty</p>
+      </div>
+      <div class="cart-summary">
+        <p>Total: <strong id="cart-total">$0</strong></p>
+      </div>
+      <button id="checkout" class="btn primary">Checkout</button>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <strong>EchoChic Products</strong>
+    <p>Every purchase funds cleanups and youth training.</p>
+    <p>© 2024 EchoChic. Free shipping India-wide.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
