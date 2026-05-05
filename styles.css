@@ -1138,6 +1138,80 @@ body.modal-open {
   margin: 0.5rem 0;
 }
 
+/* BLOG ENHANCEMENTS */
+.blog-article {
+  max-width: 860px;
+  margin: 0 auto 4rem;
+}
+
+.blog-hero {
+  padding: 60px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3rem;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.blog-meta span {
+  background: rgba(42, 101, 130, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.article-content {
+  line-height: 1.75;
+}
+
+.article-content h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 3rem 0 1.25rem;
+  color: var(--ink);
+  position: relative;
+}
+
+.article-content h2::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-2);
+  border-radius: 2px;
+}
+
+.article-content h3 {
+  font-size: 1.4rem;
+  margin: 2.5rem 0 1rem;
+  color: var(--accent);
+}
+
+.article-content p {
+  margin-bottom: 1.75rem;
+  color: rgba(21, 38, 31, 0.9);
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: 0.75rem;
+}
+
 /* Product Filters for products.html */
 .product-filters {
   display: flex;
@@ -1154,8 +1228,10 @@ body.modal-open {
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
+.filter-btn:hover,
 .filter-btn.active {
   background: var(--accent);
   color: #fff;
@@ -1172,6 +1248,7 @@ body.modal-open {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 @keyframes float {
   0%,
